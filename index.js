@@ -8,10 +8,6 @@ inquirer
 
   .then(({ data }) => {
 
-    doc.rect(0, 0, 612, 400)
-         .fill('#76c9d4')
-         .stroke()
-
     const PDFDocument = require("pdfkit");
     const doc = new PDFDocument();
 
