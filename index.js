@@ -13,18 +13,25 @@ inquirer
 
     doc.pipe(fs.createWriteStream("output.pdf"));
 
-    doc.fontSize(20);
+    doc.fontSize(20)
 
+    doc.rect(0, 0, 610, 400)
+      .lineWidth(3)
+      .fillOpacity(0.8)
+      .fillAndStroke("#76c9d4")
+    
     doc
       .rect(235, 20, 130, 130)
       .lineWidth(3)
       .stroke();
 
     doc
+      .fillColor('black')
       .text("Hello...", 100, 170, {
         width: 412,
         align: "center"
       })
+      .fillColor('black')
       .moveDown()
       .text(`My name is ${data.name}`, 100, 212, {
         width: 412,
@@ -98,7 +105,6 @@ inquirer
             height: 130,
             width: 130
           })
-
           .stroke();
 
         doc.end();
